@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["apps/web/src/*"],
+      "@onera/core": ["packages/core/src"],
+      "@onera/domain": ["packages/domain/src"],
+      "@onera/application": ["packages/application/src"],
+      "@onera/ui": ["packages/ui/src"],
+      "@onera/config": ["packages/config/src"],
+      "@onera/events": ["packages/events/src"],
+      "@onera/permissions": ["packages/permissions/src"],
+      "@onera/sdk": ["packages/sdk/src"],
+      "@onera/adapter-dev": ["adapters/dev/src"]
+    },
+
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["apps/web/src", "packages/*/src", "adapters/*/src", "worker", "tests"]
+}

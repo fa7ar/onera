@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-400: #60a5fa;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --color-primary-700: #1d4ed8;
+    --color-primary-800: #1e40af;
+    --color-primary-900: #1e3a8a;
+    --color-primary-950: #172554;
+  }
+
+  * {
+    border-color: theme('colors.slate.200');
+  }
+
+  .dark * {
+    border-color: theme('colors.slate.700');
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  ::selection {
+    @apply bg-blue-200 text-blue-900;
+  }
+
+  .dark ::selection {
+    @apply bg-blue-800 text-blue-100;
+  }
+}
+
+@layer components {
+  .onera-input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm transition-all placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:cursor-not-allowed disabled:bg-slate-50;
+  }
+
+  .dark .onera-input {
+    @apply border-slate-700 bg-slate-900 text-slate-100 placeholder:text-slate-500 disabled:bg-slate-800;
+  }
+
+  .onera-card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm;
+  }
+
+  .dark .onera-card {
+    @apply border-slate-800 bg-slate-900;
+  }
+
+  .onera-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .onera-btn-primary {
+    @apply onera-btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500/30 shadow-sm;
+  }
+
+  .onera-btn-secondary {
+    @apply onera-btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus:ring-slate-400/20;
+  }
+
+  .dark .onera-btn-secondary {
+    @apply border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700;
+  }
+
+  .onera-btn-danger {
+    @apply onera-btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500/30 shadow-sm;
+  }
+
+  .onera-btn-ghost {
+    @apply onera-btn text-slate-600 hover:bg-slate-100 focus:ring-slate-400/20;
+  }
+
+  .dark .onera-btn-ghost {
+    @apply text-slate-300 hover:bg-slate-800;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in { animation: fade-in 0.2s ease-out; }
+.animate-slide-up { animation: slide-up 0.3s ease-out; }
+.animate-slide-in-right { animation: slide-in-right 0.3s ease-out; }
+.animate-scale-in { animation: scale-in 0.15s ease-out; }
