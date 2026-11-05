@@ -2,7 +2,7 @@
 
 **Open-source, modular, vendor-neutral ERP platform.**
 
-Onera is designed for **Cloudflare Workers + Static Assets** with runtime portability. The architecture follows strict layering to keep domain and application logic free of vendor-specific dependencies.
+Onera is designed for **Cloudflare Workers + Static Assets** with runtime portability. The architecture follows strict layering to keep domain and application logic free of vendor-specific dependencies. build by [Fajar Tri](https://fjr.ai.id)
 
 ## Quick Start
 
